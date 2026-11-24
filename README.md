@@ -52,7 +52,8 @@ Formulário antes do WhatsApp, aviso de cookies, GTM, política de privacidade, 
 - [PENDENTE] Símbolo JG em vetor (hoje recortado de JPEG) e logo completa
 - [PENDENTE] Confirmar o uso do tratamento "Dra." junto ao CREFITO
 - [PENDENTE] Respostas dos 4 questionários (Profissional, Mercado, Persona, Concorrentes)
-- [PENDENTE] WhatsApp, Instagram e e-mail definitivos
+- [PENDENTE] Confirmar o WhatsApp do site: (79) 9 9870-2192 ("Recepção JG", WhatsApp Business, nome comercial "Grupo Correia") ou (79) 9 9892-3963 (apresentação da marca)
+- [PENDENTE] Instagram e e-mail definitivos
 - [PENDENTE] Planos de saúde atendidos e autorização para usar as logos
 - [PENDENTE] Diplomas, certificados e comprovante da especialização
 - [PENDENTE] Autorização escrita para fotos e vídeos de pacientes
