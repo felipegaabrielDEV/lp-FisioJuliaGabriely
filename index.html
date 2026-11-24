@@ -62,12 +62,14 @@
     <!-- Fontes equivalentes, até chegarem os arquivos de Edensor e Garet (ver Manual de Identidade Visual). -->
     <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,500;1,600&family=Montserrat:wght@400;500;600&display=swap" rel="stylesheet">
     <link rel="preload" as="image" href="assets/profissional/julia-topo-900.webp" imagesrcset="assets/profissional/julia-topo-560.webp 560w, assets/profissional/julia-topo-900.webp 900w" imagesizes="(min-width: 1024px) 440px, 86vw">
-    <link rel="stylesheet" href="styles.css?v=20261124-4">
+    <link rel="stylesheet" href="styles.css?v=20261124-5">
 </head>
 <body>
 <!-- GTM (noscript): PENDENTE o ID do gestor de tráfego. Quando existir, troque por:
      <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-XXXXXXX" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript> -->
 
+<!-- Símbolo JG: enquanto a designer não libera o arquivo (assets/marca/ fora do repositório), cada <img> do símbolo
+     cai num monograma tipográfico ("JG" na fonte de títulos) em vez de mostrar imagem quebrada. -->
 <!-- Ícones (um único sprite, sem bibliotecas externas). -->
 <svg width="0" height="0" style="position:absolute" aria-hidden="true">
     <symbol id="i-x" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" d="M6 6l12 12M18 6 6 18"/></symbol>
@@ -103,7 +105,7 @@
 <header class="topo" id="topo">
     <div class="topo-dentro">
         <a class="marca" href="#inicio" aria-label="Júlia Gabriely, Fisioterapeuta: voltar ao início">
-            <img src="assets/marca/simbolo-jg-oliva.webp" width="374" height="512" alt="" class="marca-simbolo">
+            <img src="assets/marca/simbolo-jg-oliva.webp" width="374" height="512" alt="" class="marca-simbolo" onerror="this.hidden=true;this.nextElementSibling.hidden=false"><span class="monograma marca-simbolo" aria-hidden="true" hidden>J<span>G</span></span>
             <span class="marca-texto"><strong>Júlia Gabriely</strong><small>Fisioterapeuta · CREFITO 408355-F</small></span>
         </a>
         <nav class="menu" aria-label="Seções do site">
@@ -163,7 +165,7 @@
                     <img src="assets/profissional/julia-topo-900.webp" srcset="assets/profissional/julia-topo-560.webp 560w, assets/profissional/julia-topo-900.webp 900w" sizes="(min-width: 1024px) 440px, 86vw" width="900" height="1125" alt="Júlia Gabriely, fisioterapeuta, sorrindo, de blazer caramelo e blusa branca." fetchpriority="high">
                 </div>
                 <div class="flutua flutua-1 cartao-credencial">
-                    <img src="assets/marca/simbolo-jg-oliva.webp" width="374" height="512" alt="">
+                    <img src="assets/marca/simbolo-jg-oliva.webp" width="374" height="512" alt="" onerror="this.hidden=true;this.nextElementSibling.hidden=false"><span class="monograma" aria-hidden="true" hidden>J<span>G</span></span>
                     <span><strong>Júlia Gabriely</strong>Fisioterapeuta · CREFITO 408355-F</span>
                 </div>
                 <figure class="flutua flutua-2 cartao-foto">
@@ -200,19 +202,19 @@
             </header>
             <ul class="sinais">
                 <li class="sinal revelar" style="--i:0">
-                    <div class="sinal-foto"><span class="sinal-img"><img src="assets/atendimento/cones.webp" width="900" height="1200" alt="Paciente sentada em um banco, em frente a cones coloridos no chão do quintal." loading="lazy"></span><span class="sinal-icone"><svg aria-hidden="true"><use href="#i-equilibrio"/></svg></span></div>
+                    <div class="sinal-foto"><span class="sinal-img" style="--foco: 50% 30%"><img src="assets/atendimento/cones.webp" width="900" height="1200" alt="Paciente sentada em um banco, em frente a cones coloridos no chão do quintal." loading="lazy"></span><span class="sinal-icone"><svg aria-hidden="true"><use href="#i-equilibrio"/></svg></span></div>
                     <div class="sinal-texto"><h3>Quedas ou medo de cair</h3><p>Perdeu a confiança para andar sozinho pela casa ou já teve uma queda recente.</p></div>
                 </li>
                 <li class="sinal revelar" style="--i:1">
-                    <div class="sinal-foto"><span class="sinal-img"><img src="assets/atendimento/pedal.webp" width="900" height="1200" alt="Paciente sentada no sofá com os pés em um pedal de exercício." loading="lazy"></span><span class="sinal-icone"><svg aria-hidden="true"><use href="#i-passos"/></svg></span></div>
+                    <div class="sinal-foto"><span class="sinal-img" style="--foco: 50% 72%"><img src="assets/atendimento/pedal.webp" width="900" height="1200" alt="Paciente sentada no sofá com os pés em um pedal de exercício." loading="lazy"></span><span class="sinal-icone"><svg aria-hidden="true"><use href="#i-passos"/></svg></span></div>
                     <div class="sinal-texto"><h3>Perda de força e de movimento</h3><p>Levantar da cadeira, subir um degrau ou caminhar ficou mais difícil.</p></div>
                 </li>
                 <li class="sinal revelar" style="--i:2">
-                    <div class="sinal-foto"><span class="sinal-img"><img src="assets/atendimento/maos.webp" width="900" height="1200" alt="Mãos entrelaçadas de uma paciente idosa e da fisioterapeuta." loading="lazy"></span><span class="sinal-icone"><svg aria-hidden="true"><use href="#i-dor"/></svg></span></div>
+                    <div class="sinal-foto"><span class="sinal-img" style="--foco: 55% 78%"><img src="assets/atendimento/maos.webp" width="900" height="1200" alt="Mãos entrelaçadas de uma paciente idosa e da fisioterapeuta." loading="lazy"></span><span class="sinal-icone"><svg aria-hidden="true"><use href="#i-dor"/></svg></span></div>
                     <div class="sinal-texto"><h3>Dor que limita a rotina</h3><p>Uma dor que atrapalha o sono, o banho ou as tarefas de todo dia.</p></div>
                 </li>
                 <li class="sinal revelar" style="--i:3">
-                    <div class="sinal-foto"><span class="sinal-img"><img src="assets/atendimento/visita-2.webp" width="900" height="1200" alt="Paciente idosa em pé, ao lado da fisioterapeuta de jaleco, na sala de casa." loading="lazy"></span><span class="sinal-icone"><svg aria-hidden="true"><use href="#i-cama"/></svg></span></div>
+                    <div class="sinal-foto"><span class="sinal-img" style="--foco: 50% 28%"><img src="assets/atendimento/visita-2.webp" width="900" height="1200" alt="Paciente idosa em pé, ao lado da fisioterapeuta de jaleco, na sala de casa." loading="lazy"></span><span class="sinal-icone"><svg aria-hidden="true"><use href="#i-cama"/></svg></span></div>
                     <div class="sinal-texto"><h3>Volta para casa</h3><p>Depois de uma internação ou cirurgia, a recuperação continua no conforto de casa.</p></div>
                 </li>
             </ul>
@@ -500,7 +502,7 @@
 <footer class="rodape">
     <div class="conteiner rodape-grade">
         <div class="rodape-marca">
-            <img src="assets/marca/simbolo-jg-creme.webp" width="374" height="512" alt="" class="rodape-simbolo">
+            <img src="assets/marca/simbolo-jg-creme.webp" width="374" height="512" alt="" class="rodape-simbolo" onerror="this.hidden=true;this.nextElementSibling.hidden=false"><span class="monograma rodape-simbolo" aria-hidden="true" hidden>J<span>G</span></span>
             <p><strong>Júlia Gabriely</strong>Fisioterapeuta · CREFITO 408355-F</p>
             <p class="rodape-slogan">Movimento que acolhe, cuidado que transforma.</p>
         </div>
@@ -613,9 +615,9 @@
 
 <!-- Ordem importa: eventos.js cria window.juliaTrack; consent.js cria window.jgConsent; script.js monta os links do
      WhatsApp e window.jgWhats; lead-form.js abre o formulário nos botões do WhatsApp. -->
-<script src="eventos.js?v=20261124-4" defer></script>
-<script src="consent.js?v=20261124-4" defer></script>
-<script src="script.js?v=20261124-4" defer></script>
-<script src="lead-form.js?v=20261124-4" defer></script>
+<script src="eventos.js?v=20261124-5" defer></script>
+<script src="consent.js?v=20261124-5" defer></script>
+<script src="script.js?v=20261124-5" defer></script>
+<script src="lead-form.js?v=20261124-5" defer></script>
 </body>
 </html>

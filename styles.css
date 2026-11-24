@@ -37,6 +37,7 @@
 html { scroll-behavior: smooth; scroll-padding-top: calc(var(--header-h) + 12px); -webkit-text-size-adjust: 100%; }
 body { margin: 0; background: var(--creme); color: var(--texto); font: 400 17px/1.7 var(--fonte-texto); overflow-x: hidden; }
 img { display: block; max-width: 100%; height: auto; }
+img[hidden] { display: none; }
 a { color: inherit; }
 svg { width: 22px; height: 22px; flex: none; }
 h1, h2, h3 { font-family: var(--fonte-titulo); font-weight: 600; line-height: 1.08; margin: 0 0 .5em; color: var(--texto); letter-spacing: -.01em; }
@@ -558,3 +559,19 @@ body.lead-aberto { overflow: hidden; }
 @media (hover: hover) { .numero:hover { transform: translateY(-4px); box-shadow: var(--sombra); } }
 .numeros-nota { max-width: 640px; margin: 28px auto 0; text-align: center; font-size: .92rem; color: var(--texto-2); }
 .secao-numeros .marcador { margin: 18px auto 0; }
+
+/* ---------- Monograma tipográfico (reserva do símbolo JG enquanto o arquivo não é liberado) ---------- */
+.monograma { display: inline-flex; align-items: flex-end; justify-content: center; flex: none; font: italic 500 1.9rem/1 var(--fonte-titulo); color: var(--oliva); letter-spacing: -.02em; }
+.monograma[hidden] { display: none; }
+.monograma > span { margin-left: -.22em; transform: translateY(.18em); font-style: normal; }
+.marca .monograma { width: 38px; font-size: 2.35rem; }
+.cartao-credencial .monograma { width: 30px; font-size: 1.7rem; }
+.rodape .monograma { width: 52px; margin-bottom: 14px; font-size: 2.9rem; color: var(--creme); }
+
+/* ---------- Cartões "Para quem é": fotos verticais enquadradas no assunto de cada uma ---------- */
+.sinal { display: flex; flex-direction: column; }
+.sinal-img img { object-position: var(--foco, 50% 40%); }
+@media (min-width: 1024px) {
+    .sinal-foto { aspect-ratio: 1 / 1; }
+    .sinal h3 { min-height: 2.4em; display: flex; align-items: flex-end; }
+}
