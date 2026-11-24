@@ -1,8 +1,8 @@
 /* ==========================================================================
    Júlia Gabriely · Fisioterapeuta — interações da página
    Menu, links do WhatsApp, perguntas frequentes, revelar ao rolar e o botão da
-   prévia que esconde os marcadores. Formulário antes do WhatsApp, origem por UTM,
-   eventos e aviso de cookies entram na prévia 2 (engenharia da lp-nayane-moreno).
+   prévia que esconde os marcadores. O formulário antes do WhatsApp fica em lead-form.js,
+   os eventos em eventos.js e o aviso de cookies em consent.js.
    ========================================================================== */
 (function () {
     "use strict";
@@ -28,6 +28,8 @@
         const texto = encodeURIComponent(mensagens[origem] || base);
         return numero ? `https://wa.me/${numero}?text=${texto}` : `https://wa.me/?text=${texto}`;
     };
+    // O formulário (lead-form.js) usa o mesmo número e as mesmas mensagens por origem.
+    window.jgWhats = { numero, mensagem: origem => mensagens[origem] || base };
     document.querySelectorAll("[data-wa]").forEach(el => {
         el.href = linkWhats(el.dataset.waOrigin);
         el.target = "_blank";
@@ -88,8 +90,8 @@
     cartoesVideo.forEach(c => {
         const v = c.querySelector("video"), b = c.querySelector(".video-botao");
         const alternarVideo = () => {
-            if (v.paused) { pararVideos(c); v.play().then(() => c.classList.add("tocando")).catch(() => {}); }
-            else { v.pause(); c.classList.remove("tocando"); }
+            if (v.paused) { pararVideos(c); v.play().then(() => { c.classList.add("tocando"); b.setAttribute("aria-label", b.getAttribute("aria-label").replace("Reproduzir", "Pausar")); }).catch(() => {}); }
+            else { v.pause(); c.classList.remove("tocando"); b.setAttribute("aria-label", b.getAttribute("aria-label").replace("Pausar", "Reproduzir")); }
         };
         b.addEventListener("click", alternarVideo);
         v.addEventListener("click", alternarVideo);

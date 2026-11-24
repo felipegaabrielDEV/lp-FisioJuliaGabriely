@@ -5,7 +5,7 @@ no navegador, sem internet para as imagens e sem publicar nada. Serve para mostr
 à Dra. Júlia antes de irem para o site público.
 
 Uso (na raiz do repositório):  python3 ferramentas/gerar-previa-privada.py
-Saída: interno/previa-privada-felipe.html (a pasta interno/ está no .gitignore e nunca é publicada).
+Saída: interno/previa-privada-felipe.html e interno/politica-de-privacidade.html (a pasta interno/ está no .gitignore e nunca é publicada).
 """
 import base64, mimetypes, os, re, sys
 
@@ -28,8 +28,9 @@ html = ler("index.html").decode("utf-8")
 # 1) Estilos e script embutidos
 html = re.sub(r'<link rel="stylesheet" href="styles\.css[^"]*">',
               lambda m: "<style>" + ler("styles.css").decode("utf-8") + "</style>", html)
-html = re.sub(r'<script src="script\.js[^"]*" defer></script>',
-              lambda m: "<script>" + ler("script.js").decode("utf-8") + "</script>", html)
+for arquivo in ("eventos.js", "consent.js", "script.js", "lead-form.js"):
+    html = re.sub(r'<script src="' + re.escape(arquivo) + r'[^"]*" defer></script>',
+                  lambda m, a=arquivo: "<script>" + ler(a).decode("utf-8") + "</script>", html)
 
 # 2) A pré-carga da foto do topo não serve num arquivo único
 html = re.sub(r'<link rel="preload"[^>]*>\s*', "", html)
@@ -46,6 +47,14 @@ html = html.replace("<title>", "<title>[PRÉVIA PRIVADA] ", 1)
 os.makedirs(os.path.dirname(SAIDA), exist_ok=True)
 with open(SAIDA, "w", encoding="utf-8") as f:
     f.write(html)
+
+# 6) A política de privacidade sai como arquivo irmão (mesma pasta), com CSS e script embutidos.
+#    No arquivo único, o link "politica-de-privacidade.html" abre esse segundo arquivo.
+politica = ler("politica-de-privacidade.html").decode("utf-8")
+politica = re.sub(r'<link rel="stylesheet" href="styles\.css[^"]*">', lambda m: "<style>" + ler("styles.css").decode("utf-8") + "</style>", politica)
+politica = re.sub(r'<script src="consent\.js[^"]*" defer></script>', lambda m: "<script>" + ler("consent.js").decode("utf-8") + "</script>", politica)
+with open(os.path.join(os.path.dirname(SAIDA), "politica-de-privacidade.html"), "w", encoding="utf-8") as f:
+    f.write(politica)
 
 restos = re.findall(r'(?:src|href|poster)="(assets/[^"]*)"', html)
 print(f"Gerado: {SAIDA} ({os.path.getsize(SAIDA)/1024/1024:.1f} MB)")
