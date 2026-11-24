@@ -32,7 +32,7 @@ Landing page da **Dra. Júlia Gabriely**, fisioterapeuta (CREFITO 408355-F) em A
 Movimento: barra de progresso da leitura, botão do WhatsApp que pulsa, revelar ao rolar com atraso escalonado. Tudo respeita `prefers-reduced-motion`.
 
 Os marcadores `rascunho` e `[PENDENTE]` aparecem na página e somem com o botão "ocultar marcadores" da faixa da prévia.
-Formulário antes do WhatsApp, aviso de cookies, GTM, política de privacidade, 404 e dados para o Google entram na prévia 2.
+**Já construído para a prévia 2 (em teste, aguardando as respostas da Júlia):** formulário antes do WhatsApp (`lead-form.js`), aviso de cookies com tudo negado por padrão (`consent.js`), eventos para o GTM (`eventos.js`), política de privacidade (rascunho para revisão jurídica) e página 404. O GTM só carrega quando o ID for preenchido no `index.html`. Faltam os dados para o Google (`ld+json`, `canonical`, `og:*`), que dependem de endereço, horários e domínio.
 
 ## Estrutura
 
@@ -40,6 +40,11 @@ Formulário antes do WhatsApp, aviso de cookies, GTM, política de privacidade, 
 ├── index.html       # Página única (prévia 1)
 ├── styles.css       # Identidade (tokens no :root) e layout responsivo
 ├── script.js        # Menu, WhatsApp por origem, perguntas frequentes, revelar ao rolar e botão da prévia
+├── lead-form.js     # Formulário antes do WhatsApp (4 campos) e confirmação
+├── eventos.js       # Eventos para o Google Tag Manager (dataLayer)
+├── consent.js       # Aviso de cookies (LGPD) e Modo de Consentimento do Google
+├── politica-de-privacidade.html · 404.html
+├── docs/            # gtm-passo-a-passo.md (para o gestor de tráfego) e referencias.md (sites-espelho)
 ├── assets/          # profissional/ (fotos do ensaio, WebP) e atendimento/ (fotos e vídeos de atendimento, autorizados). marca/ (símbolo JG) fica fora do repositório até a designer liberar o uso
 ├── CLAUDE.md        # Regras do projeto (leia primeiro)
 ├── .claude/         # Skills (briefing, referencias, construir-site, previa) e agentes (pesquisador, revisor)
@@ -69,3 +74,9 @@ Formulário antes do WhatsApp, aviso de cookies, GTM, política de privacidade, 
 - [PENDENTE] Arquivos da marca pessoal (logo principal, variação, pattern e PDF leve)
 - [PENDENTE] Domínio (Registro.br, em nome da cliente)
 - [PENDENTE] Conferir por escrito as normas do COFFITO e do CREFITO
+- [PENDENTE] ID do Google Tag Manager (gestor de tráfego) e conferência das tags no painel, seguindo `docs/gtm-passo-a-passo.md`
+- [PENDENTE] Política de privacidade: revisão jurídica, quem é o controlador (pessoa física ou empresa, CNPJ) e e-mail de contato
+- [PENDENTE] Dados para o Google (`ld+json`, `canonical`, `og:*`, `sitemap.xml`): endereço de atendimento, horários e domínio final
+- [PENDENTE] Resposta sobre pedido médico e sobre a família acompanhar as sessões (perguntas do FAQ com resposta pendente) e validação da frase da citação (arte do Instagram)
+- [PENDENTE] Confirmar por escrito com o CREFITO-17 o uso de "Dra.", de "em especialização" e as regras sobre preço
+- [PENDENTE] Símbolo JG: `assets/marca/` está fora do repositório, então a prévia publicada no GitHub Pages mostra imagens quebradas no lugar do monograma; use o arquivo privado ou libere o símbolo
