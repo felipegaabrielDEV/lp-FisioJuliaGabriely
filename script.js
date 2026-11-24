@@ -19,6 +19,7 @@
         particular: "Olá, Dra. Júlia! Vim pelo site e quero saber sobre o atendimento particular de fisioterapia em casa.",
         regiao: "Olá, Dra. Júlia! Vim pelo site e quero saber se você atende no meu bairro.",
         faq: "Olá, Dra. Júlia! Vim pelo site e tenho uma dúvida sobre a fisioterapia em casa.",
+        atendimentos: "Olá, Dra. Júlia! Vim pelo site e quero saber mais sobre os atendimentos em casa.",
         cuidados: "Olá, Dra. Júlia! Vim pelo site e tenho uma dúvida sobre o tratamento."
     };
     const linkWhats = origem => {
@@ -75,6 +76,58 @@
             botao.closest(".faq-item").classList.toggle("aberto", abrir);
         });
     });
+
+
+    /* ---------- No dia a dia: vídeos (sem som, em repetição) e fotos ampliadas ----------
+       O vídeo só toca quando a pessoa toca no botão; um vídeo por vez. As fotos abrem em um <dialog> nativo
+       (Esc fecha, setas e deslize trocam de foto). */
+    const cartoesVideo = [...document.querySelectorAll(".video-cartao")];
+    const pararVideos = menos => cartoesVideo.forEach(c => { if (c !== menos) { c.querySelector("video").pause(); c.classList.remove("tocando"); } });
+    cartoesVideo.forEach(c => {
+        const v = c.querySelector("video"), b = c.querySelector(".video-botao");
+        const alternarVideo = () => {
+            if (v.paused) { pararVideos(c); v.play().then(() => c.classList.add("tocando")).catch(() => {}); }
+            else { v.pause(); c.classList.remove("tocando"); }
+        };
+        b.addEventListener("click", alternarVideo);
+        v.addEventListener("click", alternarVideo);
+    });
+    if ("IntersectionObserver" in window) {
+        const obsV = new IntersectionObserver(es => es.forEach(en => { if (!en.isIntersecting) { const v = en.target.querySelector("video"); v.pause(); en.target.classList.remove("tocando"); } }), { threshold: .2 });
+        cartoesVideo.forEach(c => obsV.observe(c));
+    }
+    const fotosItens = [...document.querySelectorAll(".foto-item")];
+    if (fotosItens.length && typeof HTMLDialogElement === "function") {
+        const dlg = document.createElement("dialog");
+        dlg.className = "foto-ampliada"; dlg.setAttribute("aria-label", "Foto ampliada");
+        dlg.innerHTML = '<button type="button" class="foto-fechar" aria-label="Fechar foto">&times;</button>' +
+            '<button type="button" class="foto-seta foto-ant" aria-label="Foto anterior">&#8249;</button>' +
+            '<figure><img alt=""><figcaption></figcaption></figure>' +
+            '<button type="button" class="foto-seta foto-prox" aria-label="Próxima foto">&#8250;</button>';
+        document.body.appendChild(dlg);
+        const img = dlg.querySelector("img"), leg = dlg.querySelector("figcaption");
+        let atual = 0, origem = null;
+        const mostrar = i => {
+            atual = (i + fotosItens.length) % fotosItens.length;
+            const f = fotosItens[atual], im = f.querySelector("img");
+            img.src = im.currentSrc || im.src; img.alt = im.alt;
+            leg.textContent = (f.dataset.legenda || "") + "  ·  " + (atual + 1) + " de " + fotosItens.length;
+        };
+        const fechar = () => { if (dlg.open) dlg.close(); };
+        fotosItens.forEach((f, i) => f.addEventListener("click", () => { origem = f; mostrar(i); dlg.showModal(); document.documentElement.classList.add("foto-aberta"); }));
+        dlg.addEventListener("close", () => { document.documentElement.classList.remove("foto-aberta"); origem?.focus({ preventScroll: true }); });
+        dlg.querySelector(".foto-fechar").addEventListener("click", fechar);
+        dlg.querySelector(".foto-ant").addEventListener("click", () => mostrar(atual - 1));
+        dlg.querySelector(".foto-prox").addEventListener("click", () => mostrar(atual + 1));
+        dlg.addEventListener("click", e => { if (e.target === dlg || e.target.tagName === "FIGURE") fechar(); });
+        dlg.addEventListener("keydown", e => {
+            if (e.key === "ArrowLeft") { e.preventDefault(); mostrar(atual - 1); }
+            if (e.key === "ArrowRight") { e.preventDefault(); mostrar(atual + 1); }
+        });
+        let x0 = null;
+        dlg.addEventListener("touchstart", e => { x0 = e.touches[0].clientX; }, { passive: true });
+        dlg.addEventListener("touchend", e => { if (x0 === null) return; const dx = e.changedTouches[0].clientX - x0; x0 = null; if (Math.abs(dx) > 60) mostrar(atual + (dx < 0 ? 1 : -1)); }, { passive: true });
+    }
 
     /* ---------- Revelar ao rolar ---------- */
     const revelar = document.querySelectorAll(".revelar");

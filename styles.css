@@ -193,6 +193,33 @@ h3 { font-size: 1.45rem; }
 .cuidado p { color: var(--texto-2); font-size: .95rem; }
 .cuidado-pendente { background: transparent; border: 1px dashed var(--oliva-claro); box-shadow: none; }
 
+
+/* ---------- No dia a dia: vídeos e fotos de atendimento ---------- */
+.midia-grade { display: grid; gap: 14px; grid-template-columns: 1fr 1fr; margin-bottom: 28px; }
+.video-cartao { position: relative; margin: 0; border-radius: var(--raio); overflow: hidden; background: var(--verde-profundo); box-shadow: var(--sombra-leve); aspect-ratio: 9 / 16; }
+.video-cartao video { width: 100%; height: 100%; object-fit: cover; display: block; }
+.video-cartao figcaption { position: absolute; left: 0; right: 0; bottom: 0; padding: 36px 14px 12px; font-size: .78rem; font-weight: 600; color: var(--branco); background: linear-gradient(transparent, rgba(31, 38, 21, .78)); pointer-events: none; }
+.video-botao { position: absolute; inset: 0; margin: auto; width: 64px; height: 64px; display: grid; place-items: center; border: 0; border-radius: 50%; background: rgba(241, 238, 228, .92); color: var(--verde-profundo); cursor: pointer; box-shadow: 0 10px 28px rgba(0, 0, 0, .25); transition: transform .3s var(--ease), opacity .3s; }
+.video-botao svg { width: 28px; height: 28px; margin-left: 3px; }
+.video-cartao.tocando .video-botao { opacity: 0; pointer-events: none; }
+.video-cartao.tocando { cursor: pointer; }
+@media (hover: hover) { .video-botao:hover { transform: scale(1.08); } }
+.fotos-grade { list-style: none; margin: 0; padding: 0; grid-column: 1 / -1; display: grid; gap: 14px; grid-template-columns: repeat(2, 1fr); }
+.foto-item { display: block; width: 100%; padding: 0; border: 0; border-radius: var(--raio); overflow: hidden; background: var(--bege); cursor: zoom-in; box-shadow: var(--sombra-leve); aspect-ratio: 3 / 4; }
+.foto-item img { width: 100%; height: 100%; object-fit: cover; transition: transform .6s var(--ease); }
+@media (hover: hover) { .foto-item:hover img { transform: scale(1.05); } }
+
+dialog.foto-ampliada { width: min(94vw, 760px); max-height: 94vh; padding: 0; border: 0; border-radius: var(--raio); background: #171A0C; color: var(--creme); overflow: hidden; }
+dialog.foto-ampliada::backdrop { background: rgba(23, 26, 12, .82); backdrop-filter: blur(6px); }
+dialog.foto-ampliada figure { margin: 0; display: grid; justify-items: center; }
+dialog.foto-ampliada img { width: auto; max-width: 100%; max-height: 80vh; object-fit: contain; }
+dialog.foto-ampliada figcaption { padding: 12px 16px 16px; font-size: .85rem; text-align: center; }
+.foto-fechar, .foto-seta { position: absolute; z-index: 2; width: 48px; height: 48px; display: grid; place-items: center; border: 0; border-radius: 50%; background: rgba(241, 238, 228, .92); color: var(--verde-profundo); font-size: 1.8rem; line-height: 1; cursor: pointer; }
+.foto-fechar { top: 10px; right: 10px; }
+.foto-seta { top: 50%; transform: translateY(-50%); }
+.foto-ant { left: 10px; } .foto-prox { right: 10px; }
+html.foto-aberta { overflow: hidden; }
+
 /* ---------- Sobre ---------- */
 .sobre-grade { display: grid; gap: 40px; align-items: center; }
 .sobre-foto { margin: 0; justify-self: center; width: min(100%, 420px); }
@@ -259,6 +286,10 @@ a.rodape-link:hover { color: var(--creme); text-decoration: underline; }
    Telas maiores
    ========================================================================== */
 @media (min-width: 600px) {
+    /* a partir daqui os 2 vídeos e as 8 fotos formam uma grade única de 5 colunas × 2 linhas */
+    .midia-grade { grid-template-columns: repeat(5, 1fr); }
+    .fotos-grade { display: contents; }
+    .video-cartao { aspect-ratio: 3 / 4; }
     .sinais, .info-cartoes, .cuidados { grid-template-columns: repeat(2, 1fr); }
     .faixa-beneficios { grid-template-columns: repeat(2, 1fr); padding: 26px 30px; }
     .credenciais { grid-template-columns: repeat(2, 1fr); }
@@ -271,6 +302,7 @@ a.rodape-link:hover { color: var(--creme); text-decoration: underline; }
 }
 @media (min-width: 1024px) {
     :root { --header-h: 84px; }
+
     .so-desktop { display: inline-flex !important; }
     .menu { display: flex; }
     .menu-botao, .menu-movel { display: none !important; }

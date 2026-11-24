@@ -44,6 +44,7 @@
     <symbol id="i-insta" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.7"><rect x="3.5" y="3.5" width="17" height="17" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.2" cy="6.8" r=".6" fill="currentColor"/></g></symbol>
     <symbol id="i-capelo" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M2.5 9 12 4.5 21.5 9 12 13.5 2.5 9Z"/><path d="M6.5 11v4.5c0 1.4 2.5 3 5.5 3s5.5-1.6 5.5-3V11M21.5 9v5"/></g></symbol>
     <symbol id="i-selo" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="9.5" r="5.5"/><path d="m9 14.5-1.5 6 4.5-2 4.5 2-1.5-6"/></g></symbol>
+    <symbol id="i-play" viewBox="0 0 24 24"><path fill="currentColor" d="M8 5.5v13l11-6.5-11-6.5Z"/></symbol>
     <symbol id="i-mais" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" d="M12 5v14M5 12h14"/></symbol>
 </svg>
 
@@ -65,6 +66,7 @@
             <a href="#para-quem">Para quem é</a>
             <a href="#como-funciona">Como funciona</a>
             <a href="#cuidados">Cuidados</a>
+            <a href="#atendimentos">No dia a dia</a>
             <a href="#sobre">Sobre</a>
             <a href="#duvidas">Dúvidas</a>
         </nav>
@@ -76,6 +78,7 @@
             <a href="#para-quem">Para quem é</a>
             <a href="#como-funciona">Como funciona</a>
             <a href="#cuidados">Cuidados</a>
+            <a href="#atendimentos">No dia a dia</a>
             <a href="#sobre">Sobre</a>
             <a href="#duvidas">Dúvidas</a>
         </nav>
@@ -184,6 +187,49 @@
                 </article>
             </div>
             <div class="centro"><a class="botao" href="#" data-wa data-wa-origin="cuidados"><svg aria-hidden="true"><use href="#i-whatsapp"/></svg>Tirar uma dúvida pelo WhatsApp</a></div>
+        </div>
+    </section>
+
+    <!-- ============ NO DIA A DIA (fotos e vídeos de atendimento) ============
+         Imagens de pacientes: uso liberado pelo Felipe em 24/11/2026 ("todas as imagens e vídeos já têm autorização").
+         Ficam FORA do repositório público (assets/atendimento/ está no .gitignore) e entram só na prévia privada.
+         PENDENTE: guardar as autorizações escritas no Drive e conferir a norma do COFFITO antes de publicar. -->
+    <section class="secao secao-bege" id="atendimentos" aria-labelledby="atend-titulo">
+        <div class="conteiner">
+            <header class="cabeca centro">
+                <p class="sobretitulo">No dia a dia</p>
+                <h2 id="atend-titulo">Cuidado em movimento, <em>na casa de cada paciente</em></h2>
+                <p>Momentos reais de atendimento, com a autorização de quem aparece nas imagens.</p>
+                <p class="marcador rascunho" data-nota="Fotos e vídeos de pacientes: uso informado pelo Felipe. Guardar as autorizações escritas antes de publicar">pendente</p>
+            </header>
+            <div class="midia-grade">
+                <figure class="video-cartao revelar">
+                    <video muted loop playsinline preload="metadata" poster="assets/atendimento/caminhada-poster.webp" aria-label="Vídeo: paciente caminhando com andador, do lado de fora de casa, acompanhada pela fisioterapeuta.">
+                        <source src="assets/atendimento/caminhada.mp4" type="video/mp4">
+                    </video>
+                    <button type="button" class="video-botao" aria-label="Reproduzir vídeo: caminhada com andador"><svg aria-hidden="true"><use href="#i-play"/></svg></button>
+                    <figcaption>Caminhada com andador</figcaption>
+                </figure>
+                <figure class="video-cartao revelar">
+                    <video muted loop playsinline preload="metadata" poster="assets/atendimento/circuito-poster.webp" aria-label="Vídeo: paciente em um circuito de equilíbrio com cones, na varanda de casa.">
+                        <source src="assets/atendimento/circuito.mp4" type="video/mp4">
+                    </video>
+                    <button type="button" class="video-botao" aria-label="Reproduzir vídeo: circuito com cones"><svg aria-hidden="true"><use href="#i-play"/></svg></button>
+                    <figcaption>Circuito com cones</figcaption>
+                </figure>
+                <ul class="fotos-grade" aria-label="Fotos dos atendimentos">
+                    <li><button type="button" class="foto-item revelar" data-legenda="Atendimento em casa"><img src="assets/atendimento/visita-1.webp" width="900" height="1200" alt="Júlia Gabriely, de jaleco, segurando as mãos de uma paciente idosa sorrindo." loading="lazy"></button></li>
+                    <li><button type="button" class="foto-item revelar" data-legenda="Exercício com bola"><img src="assets/atendimento/bola.webp" width="900" height="1200" alt="Paciente idosa sentada, segurando uma bola colorida, com a fisioterapeuta de jaleco ao lado." loading="lazy"></button></li>
+                    <li><button type="button" class="foto-item revelar" data-legenda="Exercício com pedal"><img src="assets/atendimento/pedal.webp" width="900" height="1200" alt="Paciente sentada no sofá com os pés em um pedal de exercício." loading="lazy"></button></li>
+                    <li><button type="button" class="foto-item revelar" data-legenda="Atividade com jogo de dominó"><img src="assets/atendimento/domino.webp" width="900" height="1200" alt="Mãos de uma paciente e da fisioterapeuta em uma partida de dominó." loading="lazy"></button></li>
+                    <li><button type="button" class="foto-item revelar" data-legenda="Circuito de cones ao ar livre"><img src="assets/atendimento/cones.webp" width="900" height="1200" alt="Paciente sentada em um banco, em frente a cones coloridos espalhados no chão do quintal." loading="lazy"></button></li>
+                    <li><button type="button" class="foto-item revelar" data-legenda="Acolhimento durante a sessão"><img src="assets/atendimento/maos.webp" width="900" height="1200" alt="Mãos entrelaçadas de uma paciente idosa e da fisioterapeuta." loading="lazy"></button></li>
+                    <li><button type="button" class="foto-item revelar" data-legenda="Visita de acompanhamento"><img src="assets/atendimento/visita-2.webp" width="900" height="1200" alt="Paciente idosa em pé, ao lado da fisioterapeuta de jaleco, na sala de casa." loading="lazy"></button></li>
+                    <li><button type="button" class="foto-item revelar" data-legenda="Momento da visita"><img src="assets/atendimento/sorriso.webp" width="900" height="1200" alt="Paciente idosa sentada em uma poltrona, sorrindo, com o polegar para cima." loading="lazy"></button></li>
+                </ul>
+            </div>
+            <p class="nota-centro">Cada paciente tem um plano próprio. As imagens ilustram a rotina de atendimento e não indicam resultado.</p>
+            <div class="centro"><a class="botao" href="#" data-wa data-wa-origin="atendimentos"><svg aria-hidden="true"><use href="#i-whatsapp"/></svg>Conversar pelo WhatsApp</a></div>
         </div>
     </section>
 

@@ -21,6 +21,7 @@ Landing page da **Dra. Júlia Gabriely**, fisioterapeuta (CREFITO 408355-F) em A
 | Para quem é | 4 situações em rascunho (hipótese da agência) e aviso de que a avaliação médica faz parte quando necessário |
 | Como funciona | 4 etapas em rascunho, com duração e frequência pendentes |
 | Cuidados | Fisioterapia para idosos, liberação miofascial e dry needling (explicações em rascunho); demais serviços pendentes |
+| No dia a dia | 2 vídeos curtos (sem som) e 8 fotos de atendimento, com ampliação. Mídias de pacientes ficam fora do repositório (`assets/atendimento/` no `.gitignore`); só entram na prévia privada |
 | Sobre | Frase da Júlia (arte do Instagram), formação UFS, gerontologia em especialização, CREFITO; trajetória pendente |
 | Atendimento | Plano de saúde, particular e região; planos, bairros e horários pendentes |
 | Perguntas frequentes | 6 perguntas em rascunho, 3 com resposta pendente |
@@ -56,7 +57,7 @@ Formulário antes do WhatsApp, aviso de cookies, GTM, política de privacidade, 
 - [PENDENTE] Instagram e e-mail definitivos
 - [PENDENTE] Planos de saúde atendidos e autorização para usar as logos
 - [PENDENTE] Diplomas, certificados e comprovante da especialização
-- [PENDENTE] Autorização escrita para fotos e vídeos de pacientes
+- [PENDENTE] Autorização escrita para fotos e vídeos de pacientes (o Felipe informou em 24/11/2026 que já existe; guardar os documentos no Drive e conferir a norma do COFFITO antes de publicar)
 - [PENDENTE] Papel do Grupo Correia no site
 - [PENDENTE] Arquivos das fontes Edensor e Garet (ou aprovação de equivalentes)
 - [PENDENTE] Confirmar com a Júlia a marca do site (pessoal JG, decisão provisória) e a liberação de uso pela designer

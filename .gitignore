@@ -10,3 +10,7 @@ Thumbs.db
 # Símbolo JG da marca pessoal: fica fora do repositório público até a designer liberar o uso
 # (a apresentação da marca veda divulgação antes do pagamento e da finalização). Tirar esta linha quando liberar.
 assets/marca/
+
+# Fotos e vídeos de pacientes: uso liberado só para a prévia privada (Felipe, 24/11/2026).
+# Não vão ao repositório público. Para publicar: autorizações escritas no Drive e norma do COFFITO conferida.
+assets/atendimento/
