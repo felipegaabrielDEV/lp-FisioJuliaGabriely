@@ -20,6 +20,8 @@
         regiao: "Olá, Dra. Júlia! Vim pelo site e quero saber se você atende no meu bairro.",
         faq: "Olá, Dra. Júlia! Vim pelo site e tenho uma dúvida sobre a fisioterapia em casa.",
         atendimentos: "Olá, Dra. Júlia! Vim pelo site e quero saber mais sobre os atendimentos em casa.",
+        celebrar: "Olá, Dra. Júlia! Vim pelo site e quero conhecer o atendimento em casa.",
+        para_quem: "Olá, Dra. Júlia! Vim pelo site e quero conversar sobre a fisioterapia em casa para um familiar.",
         cuidados: "Olá, Dra. Júlia! Vim pelo site e tenho uma dúvida sobre o tratamento."
     };
     const linkWhats = origem => {
@@ -127,6 +129,56 @@
         let x0 = null;
         dlg.addEventListener("touchstart", e => { x0 = e.touches[0].clientX; }, { passive: true });
         dlg.addEventListener("touchend", e => { if (x0 === null) return; const dx = e.changedTouches[0].clientX - x0; x0 = null; if (Math.abs(dx) > 60) mostrar(atual + (dx < 0 ? 1 : -1)); }, { passive: true });
+    }
+
+
+    /* ---------- Topo: o título aparece palavra por palavra e depois o resto da dobra ----------
+       Cada palavra do título (data-palavras) vira um <span class="palavra"> com atraso próprio (--k).
+       A classe .pronto na seção dispara a entrada de tudo (o CSS cuida do movimento). */
+    const hero = document.querySelector(".hero");
+    const titulo = document.querySelector("[data-palavras]");
+    if (titulo && !reduzMovimento) {
+        let k = 0;
+        const quebrar = no => [...no.childNodes].forEach(filho => {
+            if (filho.nodeType === 3) {
+                const frag = document.createDocumentFragment();
+                filho.textContent.split(/(\s+)/).forEach(parte => {
+                    if (!parte.trim()) { frag.appendChild(document.createTextNode(parte)); return; }
+                    const sp = document.createElement("span"); sp.className = "palavra"; sp.style.setProperty("--k", k++); sp.textContent = parte; frag.appendChild(sp);
+                });
+                no.replaceChild(frag, filho);
+            } else if (filho.nodeType === 1) quebrar(filho);
+        });
+        quebrar(titulo);
+    }
+    requestAnimationFrame(() => requestAnimationFrame(() => hero && hero.classList.add("pronto")));
+
+    /* ---------- Barra de progresso da leitura ---------- */
+    const barra = document.querySelector(".progresso");
+    if (barra) {
+        const atualizarBarra = () => {
+            const alto = document.documentElement.scrollHeight - window.innerHeight;
+            barra.style.setProperty("--p", alto > 0 ? Math.min(1, window.scrollY / alto).toFixed(4) : 0);
+        };
+        window.addEventListener("scroll", atualizarBarra, { passive: true });
+        window.addEventListener("resize", atualizarBarra);
+        atualizarBarra();
+    }
+
+    /* ---------- Como funciona: a linha enche conforme a pessoa rola e o passo no meio da tela "acende" ---------- */
+    const listaPassos = document.querySelector(".passos");
+    if (listaPassos) {
+        const passos = [...listaPassos.querySelectorAll(".passo")];
+        const quadro = () => {
+            const r = listaPassos.getBoundingClientRect();
+            const alvo = window.innerHeight * 0.55;
+            const p = Math.max(0, Math.min(1, (alvo - r.top) / r.height));
+            listaPassos.style.setProperty("--prog", p.toFixed(3));
+            passos.forEach(pa => { const b = pa.getBoundingClientRect(); pa.classList.toggle("em-foco", b.top < alvo && b.bottom > alvo - 40 || b.bottom < alvo); });
+        };
+        window.addEventListener("scroll", quadro, { passive: true });
+        window.addEventListener("resize", quadro);
+        quadro();
     }
 
     /* ---------- Revelar ao rolar ---------- */

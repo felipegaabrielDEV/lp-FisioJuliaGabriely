@@ -1,6 +1,6 @@
 # Dra. Júlia Gabriely — Landing Page | Fisioterapia
 
-> 🚧 **Prévia 1 em construção (estrutura e visual).** Sem domínio e sem publicação: a prévia é um arquivo único privado, gerado por `python3 ferramentas/gerar-previa-privada.py` em `interno/` (fora do repositório). Toda página leva `noindex, nofollow`.
+> 🚧 **Prévia 1 em construção (estrutura e visual).** Sem domínio e sem lançamento: a prévia é um arquivo único gerado por `python3 ferramentas/gerar-previa-privada.py` em `interno/` (fora do repositório). Toda página leva `noindex, nofollow`.
 
 Landing page da **Dra. Júlia Gabriely**, fisioterapeuta (CREFITO 408355-F) em Aracaju/SE, com atendimento domiciliar e foco no público idoso: levar a pessoa certa a agendar a avaliação pelo WhatsApp.
 
@@ -17,15 +17,19 @@ Landing page da **Dra. Júlia Gabriely**, fisioterapeuta (CREFITO 408355-F) em A
 
 | Seção | Situação |
 |---|---|
-| Topo | Título e abertura em rascunho; foto do ensaio, cartão com CREFITO e faixa com 4 fatos confirmados |
-| Para quem é | 4 situações em rascunho (hipótese da agência) e aviso de que a avaliação médica faz parte quando necessário |
-| Como funciona | 4 etapas em rascunho, com duração e frequência pendentes |
+| Topo | Título que aparece palavra por palavra, foto do ensaio com "fio do movimento" e cartões flutuantes (CREFITO e foto de atendimento); abertura em rascunho |
+| Faixa de fatos e letreiro | 4 fatos confirmados e faixa corrida com os pilares do atendimento |
+| Para quem é | 4 situações (hipótese da agência) com foto de atendimento em cada uma e aviso de que a avaliação médica faz parte quando necessário |
+| Como funciona | 4 etapas ligadas por uma linha que acompanha a rolagem; duração e frequência pendentes |
 | Cuidados | Fisioterapia para idosos, liberação miofascial e dry needling (explicações em rascunho); demais serviços pendentes |
-| No dia a dia | 2 vídeos curtos (sem som) e 8 fotos de atendimento, com ampliação. Mídias de pacientes ficam fora do repositório (`assets/atendimento/` no `.gitignore`); só entram na prévia privada |
+| Cuidar também é celebrar | 3 fotos em formato de polaroide (festa junina, carnaval e uma boa conversa); texto em rascunho |
+| No dia a dia | 2 vídeos curtos (sem som, um por vez) e 6 fotos de atendimento, com ampliação, setas e deslize |
 | Sobre | Frase da Júlia (arte do Instagram), formação UFS, gerontologia em especialização, CREFITO; trajetória pendente |
 | Atendimento | Plano de saúde, particular e região; planos, bairros e horários pendentes |
 | Perguntas frequentes | 6 perguntas em rascunho, 3 com resposta pendente |
 | Chamada final e rodapé | Slogan da marca, contato a confirmar e CREFITO |
+
+Movimento: barra de progresso da leitura, botão do WhatsApp que pulsa, revelar ao rolar com atraso escalonado. Tudo respeita `prefers-reduced-motion`.
 
 Os marcadores `rascunho` e `[PENDENTE]` aparecem na página e somem com o botão "ocultar marcadores" da faixa da prévia.
 Formulário antes do WhatsApp, aviso de cookies, GTM, política de privacidade, 404 e dados para o Google entram na prévia 2.
@@ -36,7 +40,7 @@ Formulário antes do WhatsApp, aviso de cookies, GTM, política de privacidade, 
 ├── index.html       # Página única (prévia 1)
 ├── styles.css       # Identidade (tokens no :root) e layout responsivo
 ├── script.js        # Menu, WhatsApp por origem, perguntas frequentes, revelar ao rolar e botão da prévia
-├── assets/          # marca/ (símbolo JG recortado dos JPEG da apresentação) e profissional/ (fotos do ensaio, WebP)
+├── assets/          # profissional/ (fotos do ensaio, WebP) e atendimento/ (fotos e vídeos de atendimento, autorizados). marca/ (símbolo JG) fica fora do repositório até a designer liberar o uso
 ├── CLAUDE.md        # Regras do projeto (leia primeiro)
 ├── .claude/         # Skills (briefing, referencias, construir-site, previa) e agentes (pesquisador, revisor)
 ├── ferramentas/     # gerar-previa-privada.py e gerar-cartao.js
@@ -57,7 +61,8 @@ Formulário antes do WhatsApp, aviso de cookies, GTM, política de privacidade, 
 - [PENDENTE] Instagram e e-mail definitivos
 - [PENDENTE] Planos de saúde atendidos e autorização para usar as logos
 - [PENDENTE] Diplomas, certificados e comprovante da especialização
-- [PENDENTE] Autorização escrita para fotos e vídeos de pacientes (o Felipe informou em 24/11/2026 que já existe; guardar os documentos no Drive e conferir a norma do COFFITO antes de publicar)
+- [PENDENTE] Documentos de autorização das fotos e vídeos de pacientes em `assets/atendimento/` (o Felipe informou em 24/11/2026 que a Júlia as liberou com autorização, e as mídias entraram no repositório por decisão dele). Guardar os documentos escritos no Drive e conferir a norma do COFFITO antes do lançamento
+- [PENDENTE] Legendas das fotos e dos vídeos de atendimento (hoje são descrições neutras, sem nome de paciente nem promessa de resultado)
 - [PENDENTE] Papel do Grupo Correia no site
 - [PENDENTE] Arquivos das fontes Edensor e Garet (ou aprovação de equivalentes)
 - [PENDENTE] Confirmar com a Júlia a marca do site (pessoal JG, decisão provisória) e a liberação de uso pela designer
