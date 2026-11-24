@@ -32,5 +32,7 @@ Landing page da **Dra. Júlia Gabriely**, fisioterapeuta (CREFITO 408355-F) em A
 - [PENDENTE] Autorização escrita para fotos e vídeos de pacientes
 - [PENDENTE] Papel do Grupo Correia no site
 - [PENDENTE] Arquivos das fontes Edensor e Garet (ou aprovação de equivalentes)
+- [PENDENTE] Confirmar com a Júlia a marca do site (pessoal JG, decisão provisória) e a liberação de uso pela designer
+- [PENDENTE] Arquivos da marca pessoal (logo principal, variação, pattern e PDF leve)
 - [PENDENTE] Domínio (Registro.br, em nome da cliente)
 - [PENDENTE] Conferir por escrito as normas do COFFITO e do CREFITO
