@@ -183,6 +183,25 @@
         quadro();
     }
 
+    /* ---------- Em números: o valor conta de zero até o final quando a seção entra na tela ----------
+       O número final já está escrito no HTML (vale para quem reduz animações ou está sem JavaScript). */
+    const contadores = document.querySelectorAll("[data-contar]");
+    if (contadores.length && !reduzMovimento && "IntersectionObserver" in window) {
+        const formatar = (valor, casas, sufixo) => valor.toLocaleString("pt-BR", { minimumFractionDigits: casas, maximumFractionDigits: casas }) + (sufixo || "");
+        const contar = el => {
+            const alvo = parseFloat(el.dataset.contar), casas = parseInt(el.dataset.casas || "0", 10), sufixo = el.dataset.sufixo || "";
+            const inicio = performance.now(), duracao = 1500;
+            const quadro = agora => {
+                const t = Math.min(1, (agora - inicio) / duracao);
+                el.textContent = formatar(alvo * (1 - Math.pow(1 - t, 3)), casas, sufixo);
+                if (t < 1) requestAnimationFrame(quadro);
+            };
+            requestAnimationFrame(quadro);
+        };
+        const obsContar = new IntersectionObserver(es => es.forEach(en => { if (en.isIntersecting) { contar(en.target); obsContar.unobserve(en.target); } }), { threshold: .6 });
+        contadores.forEach(el => obsContar.observe(el));
+    }
+
     /* ---------- Revelar ao rolar ---------- */
     const revelar = document.querySelectorAll(".revelar");
     if (reduzMovimento || !("IntersectionObserver" in window)) {

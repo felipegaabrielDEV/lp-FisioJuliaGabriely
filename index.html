@@ -62,7 +62,7 @@
     <!-- Fontes equivalentes, até chegarem os arquivos de Edensor e Garet (ver Manual de Identidade Visual). -->
     <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,500;1,600&family=Montserrat:wght@400;500;600&display=swap" rel="stylesheet">
     <link rel="preload" as="image" href="assets/profissional/julia-topo-900.webp" imagesrcset="assets/profissional/julia-topo-560.webp 560w, assets/profissional/julia-topo-900.webp 900w" imagesizes="(min-width: 1024px) 440px, 86vw">
-    <link rel="stylesheet" href="styles.css?v=20261124-3">
+    <link rel="stylesheet" href="styles.css?v=20261124-4">
 </head>
 <body>
 <!-- GTM (noscript): PENDENTE o ID do gestor de tráfego. Quando existir, troque por:
@@ -218,6 +218,47 @@
             </ul>
             <p class="nota-centro">A fisioterapia não substitui o acompanhamento médico. Quando for preciso, a avaliação médica faz parte do cuidado.</p>
             <div class="centro"><a class="botao botao-destaque" href="#" data-wa data-wa-origin="para_quem"><svg aria-hidden="true"><use href="#i-whatsapp"/></svg>Conversar pelo WhatsApp</a></div>
+        </div>
+    </section>
+
+    <!-- ============ EM NÚMEROS ============
+         Só dados públicos, com fonte e ano, para contexto. Nenhum número fala de resultado do atendimento.
+         Valores escritos no HTML; o script.js faz a contagem animada (sem movimento para quem reduz animações). -->
+    <section class="secao secao-numeros" id="numeros" aria-labelledby="numeros-titulo">
+        <div class="conteiner">
+            <header class="cabeca centro">
+                <p class="sobretitulo">Em números</p>
+                <h2 id="numeros-titulo">Cuidar de quem tem <em>60 anos ou mais</em> faz parte do dia a dia de Aracaju</h2>
+                <p>Dados públicos, para dar contexto. Eles não dizem o que acontece com cada pessoa: cada caso começa pela avaliação.</p>
+            </header>
+            <ul class="numeros-grade">
+                <li class="numero revelar" style="--i:0">
+                    <svg aria-hidden="true"><use href="#i-pin"/></svg>
+                    <strong class="numero-valor" data-contar="90134" data-casas="0">90.134</strong>
+                    <span class="numero-texto">pessoas com 60 anos ou mais vivem em Aracaju</span>
+                    <small>IBGE, Censo 2022</small>
+                </li>
+                <li class="numero revelar" style="--i:1">
+                    <svg aria-hidden="true"><use href="#i-maos"/></svg>
+                    <strong class="numero-valor" data-contar="14.95" data-casas="2" data-sufixo="%">14,95%</strong>
+                    <span class="numero-texto">da população da cidade tem 60 anos ou mais</span>
+                    <small>IBGE, Censo 2022</small>
+                </li>
+                <li class="numero revelar" style="--i:2">
+                    <svg aria-hidden="true"><use href="#i-casa"/></svg>
+                    <strong class="numero-valor" data-contar="14094" data-casas="0">14.094</strong>
+                    <span class="numero-texto">casas de Aracaju têm uma pessoa de 60 anos ou mais morando sozinha</span>
+                    <small>IBGE, Censo 2022</small>
+                </li>
+                <li class="numero revelar" style="--i:3">
+                    <svg aria-hidden="true"><use href="#i-equilibrio"/></svg>
+                    <strong class="numero-valor" data-contar="20.9" data-casas="1" data-sufixo="%">20,9%</strong>
+                    <span class="numero-texto">dos idosos brasileiros relataram ao menos uma queda no último ano</span>
+                    <small>Ministério da Saúde, ELSI-Brasil, 2026</small>
+                </li>
+            </ul>
+            <p class="numeros-nota">Queda, dor e perda de mobilidade pedem avaliação. Quando for preciso, a avaliação médica faz parte do cuidado.</p>
+            <p class="marcador rascunho" data-nota="Números: dados públicos conferidos em 24/11/2026. A Dra. Júlia aprova o uso e a seção">rascunho</p>
         </div>
     </section>
 
@@ -378,7 +419,7 @@
                 <article class="info-cartao revelar" style="--i:0">
                     <svg aria-hidden="true"><use href="#i-cartao"/></svg>
                     <h3>Plano de saúde</h3>
-                    <p>A Dra. Júlia atende por plano de saúde. Chame no WhatsApp para confirmar a cobertura do seu.</p>
+                    <p>A Dra. Júlia atende por plano de saúde. Informe o seu plano no WhatsApp e confirmamos as condições de atendimento em casa.</p>
                     <p class="pendente">[PENDENTE: planos aceitos e se precisa de pedido médico — Mercado, pergunta 19]</p>
                     <a class="link-seta" href="#" data-wa data-wa-origin="plano">Confirmar meu plano</a>
                 </article>
@@ -416,7 +457,7 @@
                 </div>
                 <div class="faq-item">
                     <h3><button type="button" aria-expanded="false" aria-controls="faq-2" id="faq-2-b">Atende pelo plano de saúde?<svg aria-hidden="true"><use href="#i-mais"/></svg></button></h3>
-                    <div class="faq-resposta" id="faq-2" role="region" aria-labelledby="faq-2-b"><div><p>Sim, há atendimento por plano de saúde e particular. Chame no WhatsApp para confirmar o seu plano. <span class="pendente">[PENDENTE: planos aceitos]</span></p></div></div>
+                    <div class="faq-resposta" id="faq-2" role="region" aria-labelledby="faq-2-b"><div><p>Sim, há atendimento por plano de saúde e particular. Informe o seu plano no WhatsApp e confirmamos as condições de atendimento em casa. <span class="pendente">[PENDENTE: planos aceitos]</span></p></div></div>
                 </div>
                 <div class="faq-item">
                     <h3><button type="button" aria-expanded="false" aria-controls="faq-3" id="faq-3-b">Precisa de pedido médico?<svg aria-hidden="true"><use href="#i-mais"/></svg></button></h3>
@@ -572,9 +613,9 @@
 
 <!-- Ordem importa: eventos.js cria window.juliaTrack; consent.js cria window.jgConsent; script.js monta os links do
      WhatsApp e window.jgWhats; lead-form.js abre o formulário nos botões do WhatsApp. -->
-<script src="eventos.js?v=20261124-3" defer></script>
-<script src="consent.js?v=20261124-3" defer></script>
-<script src="script.js?v=20261124-3" defer></script>
-<script src="lead-form.js?v=20261124-3" defer></script>
+<script src="eventos.js?v=20261124-4" defer></script>
+<script src="consent.js?v=20261124-4" defer></script>
+<script src="script.js?v=20261124-4" defer></script>
+<script src="lead-form.js?v=20261124-4" defer></script>
 </body>
 </html>

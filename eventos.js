@@ -30,6 +30,7 @@
        Para medir outra seção, acrescente aqui o seletor e o nome. */
     const secoes = [
         { seletor: "#para-quem", nome: "para_quem" },
+        { seletor: "#numeros", nome: "em_numeros" },
         { seletor: "#como-funciona", nome: "como_funciona" },
         { seletor: "#cuidados", nome: "cuidados" },
         { seletor: "#atendimentos", nome: "no_dia_a_dia" },
