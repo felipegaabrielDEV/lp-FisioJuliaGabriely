@@ -10,9 +10,9 @@ Manual da agência (como trabalhamos, as 10 fases e as regras): documento "LEIA 
 
 ## O projeto em uma tela
 
-- **Cliente:** Dra. Júlia Gabriely, fisioterapeuta, CREFITO 408355-F (número a confirmar com ela).
+- **Cliente:** Dra. Júlia Gabriely, fisioterapeuta em **Aracaju/SE** (cidade informada pelo Felipe em 24/11/2026; bairros atendidos ainda PENDENTES), CREFITO 408355-F (número a confirmar com ela).
 - **O que sabemos (apresentação da marca, nov/2026):** formada pela Universidade Federal de Sergipe; atendimento domiciliar, por plano de saúde e particular; foco no público idoso, com abordagem personalizada; em especialização em gerontologia e saúde do idoso; usa dry needling e liberação miofascial. Slogan: "Movimento que acolhe, cuidado que transforma."
-- **Ainda não sabemos (PENDENTE):** cidade e bairros atendidos, planos aceitos, serviços completos, horários, WhatsApp definitivo, Instagram e e-mail corretos, domínio, o papel do Grupo Correia, formações comprovadas. Os 4 questionários ainda não foram respondidos.
+- **Ainda não sabemos (PENDENTE):** bairros atendidos, planos aceitos, serviços completos, horários, WhatsApp definitivo, Instagram e e-mail corretos, domínio, o papel do Grupo Correia, formações comprovadas. Os 4 questionários ainda não foram respondidos.
 - **Posicionamento e conversão:** a definir no briefing, depois das respostas. A ação principal é uma conversa qualificada no WhatsApp que vira agendamento de avaliação, passando antes pelo formulário.
 - **Visual:** identidade da apresentação da marca (Drive › Logomarca). Cores `#606F3E` (verde-oliva), `#9E9D7A`, `#CEBFA2` e `#F1EEE4`; fontes Edensor (principal) e Garet (secundária), liberadas só após a aprovação do projeto. Enquanto não houver os arquivos, usar equivalentes do Google Fonts e avisar o Felipe. Referência estética: o site da Nutri Anna Waleska (editorial, serifada, verde-oliva e creme). Reaproveita-se a engenharia, nunca a identidade, os textos ou as fotos.
 - **Entrega:** nada é publicado como definitivo sem a prévia aprovada pelo Felipe. Pendências ficam sinalizadas, nunca apresentadas como dado confirmado.

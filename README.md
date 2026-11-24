@@ -2,7 +2,7 @@
 
 > 🚧 **Projeto em preparação (fase 0).** Ainda não há site, domínio nem prévia. O repositório tem só o kit de trabalho.
 
-Landing page da **Dra. Júlia Gabriely**, fisioterapeuta (CREFITO 408355-F), com atendimento domiciliar e foco no público idoso: levar a pessoa certa a agendar a avaliação pelo WhatsApp.
+Landing page da **Dra. Júlia Gabriely**, fisioterapeuta (CREFITO 408355-F) em Aracaju/SE, com atendimento domiciliar e foco no público idoso: levar a pessoa certa a agendar a avaliação pelo WhatsApp.
 
 ## Situação
 
@@ -24,7 +24,7 @@ Landing page da **Dra. Júlia Gabriely**, fisioterapeuta (CREFITO 408355-F), com
 
 ## Pendências de conteúdo
 
-- [PENDENTE] Cidade e bairros atendidos
+- [PENDENTE] Bairros atendidos em Aracaju/SE (a cidade já foi informada)
 - [PENDENTE] Respostas dos 4 questionários (Profissional, Mercado, Persona, Concorrentes)
 - [PENDENTE] WhatsApp, Instagram e e-mail definitivos
 - [PENDENTE] Planos de saúde atendidos e autorização para usar as logos
