@@ -6,3 +6,7 @@ capturas/
 
 .DS_Store
 Thumbs.db
+
+# Símbolo JG da marca pessoal: fica fora do repositório público até a designer liberar o uso
+# (a apresentação da marca veda divulgação antes do pagamento e da finalização). Tirar esta linha quando liberar.
+assets/marca/
